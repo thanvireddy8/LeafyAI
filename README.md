@@ -106,6 +106,19 @@ CREATE DATABASE leafyai;
 * AI-powered recipe generation
 
 ---
+## 📂 Screenshots
+
+All application screenshots are available in the `leafyai/screenshots` folder.
+
+Included screens:
+
+* Dashboard
+* Meal Planner
+* Recipes
+* AI Chat
+* Progress Tracking
+* Saved Recipes
+* Preferences
 
 ## 🔮 Future Improvements
 
