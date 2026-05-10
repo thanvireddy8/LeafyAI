@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leaf-green: #1D9E75;
+  --leaf-dark: #0F6E56;
+  --leaf-light: #E1F5EE;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #f8faf9;
+  color: #1a1a1a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #9FE1CB; border-radius: 4px; }
+
+/* Smooth transitions everywhere */
+* { transition: background-color 0.15s ease, border-color 0.15s ease; }
+
+@layer components {
+  .btn-primary {
+    @apply bg-leaf-400 hover:bg-leaf-600 text-white font-medium px-4 py-2 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .btn-outline {
+    @apply border border-leaf-400 text-leaf-600 hover:bg-leaf-50 font-medium px-4 py-2 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .card {
+    @apply bg-white border border-gray-100 rounded-2xl shadow-sm;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-leaf-400 focus:border-transparent placeholder-gray-400;
+  }
+  .tag-green {
+    @apply bg-leaf-50 text-leaf-800 text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .tag-blue {
+    @apply bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .tag-amber {
+    @apply bg-amber-50 text-amber-700 text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+}
