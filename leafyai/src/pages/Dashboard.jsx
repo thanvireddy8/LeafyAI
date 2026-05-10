@@ -37,11 +37,12 @@ function generateRecipeFromIngredients(ingredientsText, userGoal) {
     carbs: 45,
     fat: 12,
     fiber: 9,
-    tags: userGoal === 'weight-loss'
-      ? ['Low Calorie', 'High Fiber']
-      : userGoal === 'muscle-gain'
-      ? ['High Protein', 'Energy Dense']
-      : ['Balanced', 'Whole Food'],
+    tags:
+      userGoal === 'weight-loss'
+        ? ['Low Calorie', 'High Fiber']
+        : userGoal === 'muscle-gain'
+        ? ['High Protein', 'Energy Dense']
+        : ['Balanced', 'Whole Food'],
     time: '20 min',
     servings: 1,
     ingredients: [
@@ -160,11 +161,9 @@ export default function Dashboard() {
               Generated Recipes
             </h3>
 
-            <div className="flex gap-4 overflow-x-auto pb-2 -mx-1 px-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
               {generatedRecipes.map((meal) => (
-                <div key={meal.id} className="flex-shrink-0">
-                  <MealCard meal={meal} mealType="Generated" />
-                </div>
+                <MealCard key={meal.id} meal={meal} mealType="Generated" />
               ))}
             </div>
           </div>
@@ -186,11 +185,9 @@ export default function Dashboard() {
                 </span>
               </h3>
 
-              <div className="flex gap-4 overflow-x-auto pb-2 -mx-1 px-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {sorted.map((meal) => (
-                  <div key={meal.id} className="flex-shrink-0">
-                    <MealCard meal={meal} mealType={type} />
-                  </div>
+                  <MealCard key={meal.id} meal={meal} mealType={type} />
                 ))}
               </div>
             </div>
@@ -209,7 +206,7 @@ export default function Dashboard() {
             <div className="card divide-y divide-gray-50">
               {todayMeals.map((meal, i) => (
                 <div
-                  key={i}
+                  key={`${meal.id}-${i}`}
                   className="flex items-center justify-between px-4 py-3"
                 >
                   <div>
